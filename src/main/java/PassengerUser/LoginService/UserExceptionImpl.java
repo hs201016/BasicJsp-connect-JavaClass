@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 
 
-public class UserExceptionImpl  {
+public class UserExceptionImpl implements UserException{
 
     public void idFormat(String str) throws AuthenException {
 
@@ -72,7 +72,7 @@ public class UserExceptionImpl  {
 
     // 전화번호 확인
     public void phoneNumCheck(String PhoneNum) throws AuthenException {
-        boolean check = Pattern.matches(
+                boolean check = Pattern.matches(
                 "(010)-(\\d{4})-(\\d{4})", PhoneNum);
 
         if (!check)
@@ -80,18 +80,24 @@ public class UserExceptionImpl  {
 
     }
 
-    public void birthCheck(String birth) throws AuthenException {
-        if(birth.length() < 8) {
-            throw new AuthenException("생년월일 입력 양식은 YYYYMMDD 입니다.");
+
+    @Override
+    public void studentIdCheck(String studentId) throws AuthenException{
+        boolean check = Pattern.matches(
+                "(\\d{8})", studentId);
+
+        if(!check) {
+            throw new AuthenException("학번은 8자리 숫자로 입력해주세요.");
         }
-        else {
-            boolean check = Pattern.matches(
-                    "(\\d{8})", birth);
-            if(!check)
-                throw new AuthenException("생년월일 입력 양식은 YYYYMMDD 입니다");
+
+    }
 
 
-        }
+    @Override
+    public void placeCheck(String place) throws AuthenException {
+     // 나중에 jsp 에서 select box로 잡아오기
+        // String[] PlaceRepository = {"창동", "노원", "방학", "인천", "일산", "의정부", "민락"};
+
 
     }
     }

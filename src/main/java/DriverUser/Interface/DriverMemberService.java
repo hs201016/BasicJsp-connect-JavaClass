@@ -1,7 +1,7 @@
 package DriverUser.Interface;
 
-import DriverUser.DriverLoginRepository;
-import DriverUser.DriverMember;
+import DriverUser.LoginService.DriverLoginRepository;
+import DriverUser.LoginService.DriverMember;
 
 public interface DriverMemberService {
 

@@ -11,6 +11,13 @@ public class UserInsertDataImpl implements UserInsertData { // 사용자에게 �
     PassengerMemberServiceImpl passengerMemberService = new PassengerMemberServiceImpl();
     PassengerLoginServiceImpl login1 = new PassengerLoginServiceImpl();
 
+    PassengerMemberSQL passengerMemberSQL = new PassengerMemberSQL();
+
+    @Override
+    public void InsertUserDataJDBCConnection() {
+        passengerMemberSQL.jdbcConnection();
+    }
+
     @Override
     public void InsertPassengerMemberJoinData() {
 
@@ -39,11 +46,14 @@ public class UserInsertDataImpl implements UserInsertData { // 사용자에게 �
             String phoneNum = sc.next();
             userExceptionImpl.phoneNumCheck(phoneNum);
 
-            System.out.println("birth");
-            String birth = sc.next();
-            userExceptionImpl.birthCheck(birth);
+            System.out.println("studentId");
+            String studentId = sc.next();
+            userExceptionImpl.studentIdCheck(studentId);
 
-            PassengerMember passengerMember = new PassengerMember(id, pw, name, gender, phoneNum, birth);
+            System.out.println("place");
+            String place = sc.next();
+
+            PassengerMember passengerMember = new PassengerMember(id, pw, name, gender, phoneNum, studentId, place);
             passengerMemberService.PassengerJoin(passengerMember);
 
         } catch (AuthenException e) {

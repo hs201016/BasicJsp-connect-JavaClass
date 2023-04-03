@@ -2,6 +2,7 @@ package PassengerUser.LoginService;
 
 public class PassengerMember {
 
+
     private String id;
 
     private String pw;
@@ -12,18 +13,19 @@ public class PassengerMember {
 
     private String phoneNum;
 
-    private String birth;
+    private String studentId;
 
-    public PassengerMember(String id, String pw, String name, String gender, String phoneNum, String birth) {
+    private String place;
+
+    public PassengerMember(String id, String pw, String name, String gender, String phoneNum, String studentId, String place) {
         this.id = id;
         this.pw = pw;
         this.name = name;
         this.gender = gender;
         this.phoneNum = phoneNum;
-        this.birth = birth;
+        this.studentId = studentId;
+        this.place = place;
     }
-
-
 
     public String getId() {
         return id;
@@ -65,23 +67,20 @@ public class PassengerMember {
         this.phoneNum = phoneNum;
     }
 
-    public String getBirth() {
-        return birth;
+    public String getStudentId() {
+        return studentId;
     }
 
-    public void setBirth(String birth) {
-        this.birth = birth;
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
     }
 
-    @Override
-    public String toString() {
+    public String getPlace() {
+        return place;
+    }
 
-        String str = String.format("아이디:%s \n이름:%s \n성별:%s \n생일:%s \n",
-
-                id, name, gender, birth);
-
-
-        return str;
+    public void setPlace(String place) {
+        this.place = place;
     }
 
 }

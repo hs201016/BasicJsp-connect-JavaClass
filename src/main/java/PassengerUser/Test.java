@@ -20,7 +20,7 @@ public class Test {
                     "4. 로그아웃");
             int num = sc.nextInt();
             if (num == 0) {
-                new PassengerMemberServiceImpl().jdbcConnection();
+                userInsertDataImpl.InsertUserDataJDBCConnection();
             }
 
             if (num == 1) { // 회원가입하기

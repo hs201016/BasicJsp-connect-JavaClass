@@ -1,7 +1,5 @@
-package DriverUser;
+package DriverUser.LoginService;
 
-import DriverUser.DriverMember;
-import DriverUser.DriverMemberSQL;
 import DriverUser.Interface.DriverMemberService;
 
 import java.sql.SQLException;

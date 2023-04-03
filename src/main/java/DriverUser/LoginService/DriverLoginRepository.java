@@ -1,4 +1,4 @@
-package DriverUser;
+package DriverUser.LoginService;
 
 public class DriverLoginRepository {
 

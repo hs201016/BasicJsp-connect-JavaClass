@@ -13,7 +13,7 @@ public class PassengerMemberServiceImpl extends
         jdbcConnection(); // con 초기화 하기 위해서
         Scanner sc = new Scanner(System.in);
         int result = 0;
-        String sql = "INSERT INTO Passengerdatabase VALUES(?,?,?,?,?,?)";
+        String sql = "INSERT INTO Passengerdatabase VALUES(?,?,?,?,?,?,?)";
 
         try {
             pstmt = con.prepareStatement(sql);
@@ -22,7 +22,8 @@ public class PassengerMemberServiceImpl extends
             pstmt.setString(3, passengerMember.getName());
             pstmt.setString(4, passengerMember.getPhoneNum());
             pstmt.setString(5, passengerMember.getGender());
-            pstmt.setString(6, passengerMember.getBirth());
+            pstmt.setString(6, passengerMember.getStudentId());
+            pstmt.setString(7, passengerMember.getPlace());
 
             result = pstmt.executeUpdate(); // 영향을 미친 수 만큼 올라감
 

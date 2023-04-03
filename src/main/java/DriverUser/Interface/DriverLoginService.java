@@ -1,6 +1,6 @@
 package DriverUser.Interface;
 
-import DriverUser.DriverLoginRepository;
+import DriverUser.LoginService.DriverLoginRepository;
 
 public interface DriverLoginService {
 
