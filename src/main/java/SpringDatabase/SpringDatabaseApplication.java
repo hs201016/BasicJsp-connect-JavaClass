@@ -11,8 +11,7 @@ public class SpringDatabaseApplication {
 		SpringApplication.run(SpringDatabaseApplication.class, args);
 	}
 
-
-	git remote add origin https://github.com/hs201016/BasicJsp-connect-JavaClass.git
+	// 테스트입니다
 
 
 
